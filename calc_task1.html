@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<title>
+    Calculator
+</title>
+<head>
+    <link rel="stylesheet" href="calstyle.css">
+<h1 style="background-color:rgb(203, 142, 235)";>Simple Calculator using HTML, CSS , JavaScript</h1>
+</head>
+<body>
+    <center>
+        <div class="box">
+    <table id="cal">
+        <tr>
+            <td colspan="3">
+                <input type="text" id="op" >
+            </td>
+            <td>
+                <input type="button" value="C" onclick="clrr()"class="btn" >
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="1" onclick="dis(1)" class="btn" >
+            </td>
+            <td>
+                <input type="button" value="2" onclick="dis(2)" class="btn" >
+            </td>
+            <td>
+                <input type="button" value="3" onclick="dis(3)"class="btn">
+            </td>
+            <td>
+                <input type="button" value="+" onclick="dis('+')" class="btn">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="4" onclick="dis(4)" class="btn">
+            </td>
+            <td>
+                <input type="button" value="5" onclick="dis(5)" class="btn">
+            </td>
+            <td>
+                <input type="button" value="6" onclick="dis(6)" class="btn" >
+            </td>
+            <td>
+                <input type="button" value="-" id="b1" onclick="dis('-')" class="btn">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="7" onclick="dis(7)" class="btn">
+            </td>
+            <td>
+                <input type="button" value="8" onclick="dis(8)" class="btn">
+            </td>
+            <td>
+                <input type="button" value="9" onclick="dis(9)" class="btn">
+            </td>
+            <td>
+                <input type="button" value="*" onclick="dis('*')" class="btn">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="0" onclick="dis(0)" class="btn" >
+            </td>
+            <td>
+                <input type="button" value="(" id="b1" onclick="dis('(')" class="btn">
+            </td>
+            <td>
+                <input type="button" value=")" id="b1" onclick="dis(')')" class="btn">
+            </td>
+            <td>
+                <input type="button" value="/" onclick="dis('/')"  class="btn">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="button" value= "=" onclick="equ()" class="btn1" >
+            </td>
+            <td colspan="2">
+                <input type="button" value="B" onclick="bksps()" class="btn1">
+            </td>
+        </tr>
+    </table>
+        </div>
+    </center>
+
+    <script>
+         function dis(val) {
+                document.getElementById("op").value += val;
+            }
+
+         function equ(){
+            var val = document.getElementById('op').value;
+            if(val){
+                val = eval(val);
+                document.getElementById('op').value = val;
+            }
+        }
+
+         function clrr(){
+            document.getElementById("op").value = "";
+           }
+
+          function bksps(){
+            var val = document.getElementById('op').value;
+            let n = val.length;
+            val = val.substring(0,n-1);
+            document.getElementById('op').value = val;
+           }
+    </script>
+</body>
